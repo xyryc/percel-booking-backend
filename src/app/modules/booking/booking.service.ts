@@ -65,10 +65,7 @@ const createBooking = async (payload: Partial<IBooking>, userId: string) => {
       );
 
       if (!payment) {
-        throw new AppError(
-          "Payment creation failed.",
-          httpStatus.INTERNAL_SERVER_ERROR
-        );
+        throw new AppError("Payment failed.", httpStatus.INTERNAL_SERVER_ERROR);
       }
 
       const updatedBooking = await Booking.findByIdAndUpdate(
