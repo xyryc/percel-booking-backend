@@ -115,7 +115,7 @@ const createBooking = async (payload: Partial<IBooking>, userId: string) => {
     }
   } catch (error) {
     throw new AppError(
-      `Error creating booking. ${error}`,
+      `Failed to create booking. ${error}`,
       httpStatus.INTERNAL_SERVER_ERROR
     );
   }
