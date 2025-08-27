@@ -19,8 +19,8 @@ const createBooking = async (payload: Partial<IBooking>, userId: string) => {
       const user = await User.findById(userId);
       if (!user || !user.phone || !user.address) {
         throw new AppError(
-          "User must have a phone number and address to create a booking.",
-          httpStatus.BAD_REQUEST,
+          "User must provide a phone number and address to create a booking.",
+          httpStatus.BAD_REQUEST
         );
       }
 
@@ -28,7 +28,7 @@ const createBooking = async (payload: Partial<IBooking>, userId: string) => {
       if (!parcel?.costFrom) {
         throw new AppError(
           "Parcel must have a cost to create a booking.",
-          httpStatus.BAD_REQUEST,
+          httpStatus.BAD_REQUEST
         );
       }
 
@@ -42,13 +42,13 @@ const createBooking = async (payload: Partial<IBooking>, userId: string) => {
             status: BookingStatus.PENDING,
           },
         ],
-        { session },
+        { session }
       );
 
       if (!booking) {
         throw new AppError(
           "Booking creation failed.",
-          httpStatus.INTERNAL_SERVER_ERROR,
+          httpStatus.INTERNAL_SERVER_ERROR
         );
       }
 
@@ -61,13 +61,13 @@ const createBooking = async (payload: Partial<IBooking>, userId: string) => {
             amount: amount,
           },
         ],
-        { session },
+        { session }
       );
 
       if (!payment) {
         throw new AppError(
           "Payment creation failed.",
-          httpStatus.INTERNAL_SERVER_ERROR,
+          httpStatus.INTERNAL_SERVER_ERROR
         );
       }
 
@@ -76,7 +76,7 @@ const createBooking = async (payload: Partial<IBooking>, userId: string) => {
         {
           payment: payment[0]._id,
         },
-        { new: true, runValidators: true, session },
+        { new: true, runValidators: true, session }
       )
         .populate("user", "name email phone address")
         .populate("tour", "name maxGests")
@@ -85,7 +85,7 @@ const createBooking = async (payload: Partial<IBooking>, userId: string) => {
       if (!updatedBooking) {
         throw new AppError(
           "Booking update failed.",
-          httpStatus.INTERNAL_SERVER_ERROR,
+          httpStatus.INTERNAL_SERVER_ERROR
         );
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -119,7 +119,7 @@ const createBooking = async (payload: Partial<IBooking>, userId: string) => {
   } catch (error) {
     throw new AppError(
       `Error creating booking. ${error}`,
-      httpStatus.INTERNAL_SERVER_ERROR,
+      httpStatus.INTERNAL_SERVER_ERROR
     );
   }
 };
