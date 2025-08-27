@@ -20,8 +20,8 @@ Designed for a parcel delivery system, it allows users to perform various tasks 
 1. **Clone the Repository:**
 
    ```sh
-   git clone <your-repo-url>
-   cd delivedge-a-parcel-booking-system
+   git clone https://github.com/xyryc/percel-booking-backend.git
+   cd percel-booking-backend
    ```
 
 2. **Install Dependencies:**
@@ -33,7 +33,7 @@ Designed for a parcel delivery system, it allows users to perform various tasks 
 3. **Create Environment File (.env):**
 
    ```
-   PORT=3000
+   PORT=1700
    DATABASE_URL=mongodb://localhost:27017/parcel_db
    JWT_SECRET=YOUR_VERY_SECRET_KEY
    JWT_EXPIRES_IN=7d
@@ -44,7 +44,7 @@ Designed for a parcel delivery system, it allows users to perform various tasks 
    ```sh
    npm run dev
    ```
-   Your server will run at: [http://localhost:3000](http://localhost:3000)
+   Your server will run at: [http://localhost:1700](http://localhost:1700)
 
 ## User Create Schema (Example)
 
