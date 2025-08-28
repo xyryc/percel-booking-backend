@@ -35,8 +35,7 @@ const userSchema = new Schema<IUser>(
     timestamps: true,
     versionKey: false,
     toJSON: { virtuals: true },
-  },
+  }
 );
-
 
 export const User = model<IUser>("User", userSchema);

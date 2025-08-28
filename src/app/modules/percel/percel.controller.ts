@@ -45,7 +45,7 @@ const updateParcelStatus = catchAsync(async (req: Request, res: Response) => {
   const result = await ParcelServices.updateParcelStatus(
     id,
     { status, location, note },
-    adminId,
+    adminId
   );
 
   sendResponse(res, {

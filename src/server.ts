@@ -6,8 +6,6 @@ import mongoose from "mongoose";
 import app from "./app";
 import envVar from "./app/config/envVar";
 
-
-
 let server: Server;
 
 const startServer = async (port: number): Promise<void> => {

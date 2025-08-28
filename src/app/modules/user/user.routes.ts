@@ -10,17 +10,14 @@ const router = Router();
 router.post(
   "/register",
   validateRequest(createUserZodSchema),
-  UserController.createUser,
+  UserController.createUser
 );
-router.get(
-  "/",verifyToken(role.ADMIN),
-  UserController.getAllUsers,
-);
+router.get("/", verifyToken(role.ADMIN), UserController.getAllUsers);
 router.patch(
   "/:id",
   validateRequest(updateUserZodSchema),
   verifyToken(role.ADMIN, role.RECIVER, role.SENDER),
-  UserController.updateUser,
+  UserController.updateUser
 );
-  
+
 export const UserRoutes = router;
