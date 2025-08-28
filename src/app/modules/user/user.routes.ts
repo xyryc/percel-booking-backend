@@ -12,7 +12,9 @@ router.post(
   validateRequest(createUserZodSchema),
   UserController.createUser
 );
+
 router.get("/", verifyToken(role.ADMIN), UserController.getAllUsers);
+
 router.patch(
   "/:id",
   validateRequest(updateUserZodSchema),
