@@ -109,6 +109,4 @@ Designed for a parcel delivery system, it allows users to perform various tasks 
 
 - **Live Link:** [https://delivedge.vercel.app](https://delivedge.vercel.app)
 
-- **Demo Video:** [Project Overview & Demo (Drive)]()
-
 - **PostMan:** [Postman](https://drive.google.com/file/d/143kVUbPJ6fc8TiRfk3WQC2XlijAtn95_/view?usp=sharing)
